@@ -21,11 +21,12 @@ subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
 X$subject <- rbind(subject_train, subject_test)
 rm(y_train, y_test, subject_train, subject_test)
 
-activities <- read.table("UCI HAR Dataset/activity_labels.txt")
+means <- sapply(X[1:(ncol(X)-2)], tapply, c(X$activity, X$subject), mean)
 
+activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 subject <- rep(1:30, each=6)
 activity <- rep(activities[,2], 30)
-means <- sapply(X[1:(ncol(X)-2)], tapply, c(X$activity, X$subject), mean)
+
 tidy_data <- data.frame(subject, activity, means)
 names(tidy_data) <- sub("..", "", names(tidy_data), fixed=TRUE)
 

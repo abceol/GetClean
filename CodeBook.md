@@ -37,12 +37,10 @@ fBodyGyroJerkMag
 
 My additional information (about producing the tidy dataset)
 
-In the original data many variables were estimated from these signals (described in the original features_info.txt, but for the tidy dataset only two were extracted - mean and standard deviation (std) - for each of the above listed signals.
+There are 17 signals listed above, but 8 of them are measured in the X, Y, & Z directions, which means there are actually 33 signals.
 
-These were variables were then averaged for each subject performing each of the 6 activities (WALKING
-, WALKING_UPSTAIRS
-, WALKING_DOWNSTAIRS
-, SITTING
-, STANDING
-, LAYING
-)
+In the original data many variables were estimated from these signals (described in the original features_info.txt, & listed in the original features.txt), so that there are 561 columns in the original dataset, but for the tidy dataset only two variables were extracted - mean and standard deviation (std) - for each of the above listed signals.
+
+These variables were then averaged for each subject performing each of the 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING). There were 30 subjects, so this resulted in 180 records. Each record contains the subject and activity identifiers, and 66 variables.
+
+In the tidy dataset, hyphens are replaced by dots. The mean is denoted by ".mean" and the standard deviation by ".std", the direction (if any) coming after, e.g. "tBodyGyro.std.Z".
