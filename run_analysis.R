@@ -30,4 +30,4 @@ activity <- rep(activities[,2], 30)
 tidy_data <- data.frame(subject, activity, means)
 names(tidy_data) <- sub("..", "", names(tidy_data), fixed=TRUE)
 
-write.table(tidy_data, file="tidy.txt")
+write.table(tidy_data, file="tidy.txt", row.names=FALSE)
